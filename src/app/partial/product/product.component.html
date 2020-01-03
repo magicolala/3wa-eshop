@@ -1,0 +1,45 @@
+<div class="row" style="display: flex; justify-content: space-around; align-items: center;">
+  <!--Grid column-->
+  <div class="col-lg-2 col-md-6 mb-4" *ngFor="let product of products|slice: 0 :5">
+    <!--Card-->
+    <div class="card card-ecommerce">
+      <!--Card image-->
+      <div class="view overlay">
+        <img src="{{product.image}}" class="img-fluid" alt="">
+        <a [routerLink]="['/product', product.id]">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Card image-->
+
+      <!--Card content-->
+      <div class="card-body">
+        <!--Category & Title-->
+
+
+        <span class="badge badge-danger mb-2" *ngIf="product.promoPrice != 0">Promo</span>
+        <span class="badge badge-success mb-2" *ngIf="product.promoPrice != 0" style="position: relative; top: -60px; left: -50px">-{{product.percentage}} %</span>
+        <h5 class="card-title mb-1"><strong><a [routerLink]="['/product', product.id]" class="dark-grey-text">{{product.title}}</a></strong></h5>
+
+        <!--Card footer-->
+        <div class="card-footer pb-0" style="display: flex; justify-content: space-around; align-items: center;">
+          <div class="row mb-0">
+            <strong *ngIf="product.promoPrice !== 0">{{product.promoPrice}} €</strong>
+            <strong *ngIf="product.promoPrice === 0">{{product.price}} €</strong>
+          </div>
+          <div class="row mb-0" *ngIf="product.promoPrice !== 0">
+            <s> {{product.price}} €</s>
+          </div>
+        </div>
+
+      </div>
+      <!--Card content-->
+
+    </div>
+    <!--Card-->
+
+
+
+  </div>
+  <!--Grid column-->
+</div>

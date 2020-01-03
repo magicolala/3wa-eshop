@@ -1,0 +1,135 @@
+<!--Navigation-->
+<div class="container-fluid pt-3">
+
+  <!--Navbar-->
+  <app-nav></app-nav>
+  <!--/.Navbar-->
+
+</div>
+<!-- /.Navigation -->
+
+<!-- /.Main Container -->
+<div class="container-fluid">
+  <div class="row pt-4">
+
+    <!-- Content -->
+    <div class="col-lg-12">
+
+      <!-- Products Grid -->
+      <section class="section pt-4" style="overflow: hidden;">
+
+        <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>Promotions</strong></h4>
+
+        <!-- Grid row -->
+        <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-6 mb-4" *ngFor="let product of promoProducts|slice: 0 : 5">
+
+            <!--Card-->
+            <div class="card card-ecommerce">
+              <!--Card image-->
+              <div class="view overlay">
+                <img src="{{product.image}}" class="img-fluid" alt="">
+                <a [routerLink]="['/product', product.id]">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card image-->
+
+              <!--Card content-->
+              <div class="card-body">
+                <!--Category & Title-->
+
+
+                <span class="badge badge-danger mb-2">Promo</span>
+                <span class="badge badge-success mb-2" style="position: relative; top: -60px; left: -50px">-{{product.percentage}} %</span>
+                <h5 class="card-title mb-1"><strong><a [routerLink]="['/product', product.id]" class="dark-grey-text">{{product.title}}</a></strong></h5>
+
+                <!--Card footer-->
+                <div class="card-footer pb-0" style="display: flex; justify-content: space-around;">
+                  <div class="row mb-0">
+                    <strong>{{product.promoPrice}} €</strong>
+                  </div>
+                  <div class="row mb-0">
+                    <s> {{product.price}} €</s>
+                  </div>
+                </div>
+
+              </div>
+              <!--Card content-->
+
+            </div>
+            <!--Card-->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+        <hr class="mb-5">
+
+        <!--Grid row-->
+        <div *ngFor="let category of categories;">
+          <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>{{category.name}}</strong></h4>
+          <div class="row" style="display: flex; justify-content: space-around;">
+
+            <app-product [category]="category"></app-product>
+
+          </div>
+        </div>
+        <!--Grid row-->
+
+
+
+        <!--Grid row-->
+        <div class="row justify-content-center mb-4">
+
+<!--          &lt;!&ndash;Pagination &ndash;&gt;-->
+<!--          <nav class="mb-4">-->
+<!--            <ul class="pagination pagination-circle pg-blue mb-0">-->
+
+<!--              &lt;!&ndash;First&ndash;&gt;-->
+<!--              <li class="page-item disabled clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect">First</a></li>-->
+
+<!--              &lt;!&ndash;Arrow left&ndash;&gt;-->
+<!--              <li class="page-item disabled">-->
+<!--                <a class="page-link waves-effect waves-effect" aria-label="Previous">-->
+<!--                  <span aria-hidden="true">«</span>-->
+<!--                  <span class="sr-only">Previous</span>-->
+<!--                </a>-->
+<!--              </li>-->
+
+<!--              &lt;!&ndash;Numbers&ndash;&gt;-->
+<!--              <li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>-->
+<!--              <li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>-->
+<!--              <li class="page-item"><a class="page-link waves-effect waves-effect">3</a></li>-->
+<!--              <li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>-->
+<!--              <li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>-->
+
+<!--              &lt;!&ndash;Arrow right&ndash;&gt;-->
+<!--              <li class="page-item">-->
+<!--                <a class="page-link waves-effect waves-effect" aria-label="Next">-->
+<!--                  <span aria-hidden="true">»</span>-->
+<!--                  <span class="sr-only">Next</span>-->
+<!--                </a>-->
+<!--              </li>-->
+
+<!--              &lt;!&ndash;First&ndash;&gt;-->
+<!--              <li class="page-item clearfix d-none d-md-block"><a class="page-link waves-effect waves-effect">Last</a></li>-->
+
+<!--            </ul>-->
+<!--          </nav>-->
+<!--          &lt;!&ndash;/Pagination &ndash;&gt;-->
+
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- /.Products Grid -->
+
+    </div>
+    <!-- /.Content -->
+
+  </div>
+
+</div>

@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.img-hover-zoom {
+  //height: 300px; /* Modify this according to your need */
+  //overflow: hidden; /* Removing this will break the effects */
+}
+
+/* Quick-zoom Container */
+.img-hover-zoom--quick-zoom img {
+  transform-origin: 0 0;
+  transition: transform .25s, visibility .25s ease-in;
+}
+
+/* The Transformation */
+.img-hover-zoom--quick-zoom:hover img {
+  transform: scale(2);
+}

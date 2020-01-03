@@ -1,0 +1,31 @@
+<nav class="navbar fixed-top navbar-expand-lg  navbar-light primary-color scrolling-navbar">
+
+  <!-- Navbar brand -->
+  <a class="font-weight-bold white-text mr-4" routerLink="/home">Home</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item" *ngFor="let category of categories">
+        <a class="nav-link waves-effect waves-light" [routerLink]="['/category', category.id]" style="color: white;">{{category.name}}</a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+    <!--      &lt;!&ndash; Search form &ndash;&gt;-->
+    <!--      <form class="search-form" role="search">-->
+    <!--        <div class="form-group md-form my-0 waves-light waves-effect waves-light">-->
+    <!--          <input type="text" class="form-control" placeholder="Search">-->
+    <!--        </div>-->
+    <!--      </form>-->
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
