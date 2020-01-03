@@ -399,7 +399,7 @@ export const TAILLES = [
     id: 10,
     productId: 4,
     name: 'S',
-    stock: 8
+    stock: 0
   },
   {
     id: 11,

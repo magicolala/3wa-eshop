@@ -22,10 +22,10 @@
 
                 </div>
 
-<!--                <div class="carousel-item" *ngFor="let image of images; let i = index;" [ngClass]="{'active': i === 0}">-->
-<!--                    <img src="{{image.imageUrl}}" alt="First slide"-->
-<!--                         class="img-fluid">-->
-<!--                  </div>-->
+                <div class="carousel-item" *ngFor="let image of images; let i = index;" [ngClass]="{'active': i === 0}">
+                  <img src="{{image.imageUrl}}" alt="First slide"
+                       class="img-fluid">
+                </div>
               </div>
               <!--/.Slides-->
 
@@ -62,26 +62,25 @@
             </h3>
 
             <!--Accordion wrapper-->
-<!--            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">-->
+            <!--            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">-->
 
 
+            <!-- Card header -->
+            <div class="">
+              <h5 class="mb-0 text-center">
+                Description
+              </h5>
+            </div>
 
-                <!-- Card header -->
-                <div class="">
-                  <h5 class="mb-0 text-center">
-                    Description
-                  </h5>
-                </div>
+            <!-- Card body -->
 
-                <!-- Card body -->
+            <div>
+              <div class="card-body">
+                {{product.description}}
+              </div>
+            </div>
 
-                <div>
-                  <div class="card-body">
-                    {{product.description}}
-                  </div>
-                </div>
-
-              <!-- Accordion card -->
+            <!-- Accordion card -->
 
 
             <!--/.Accordion wrapper-->
@@ -95,8 +94,10 @@
                   <div class="col-md-4" *ngFor="let taille of tails; let i = index;">
                     <!--Radio group-->
                     <div class="form-group">
-                      <input class="form-check-input" name="group100" type="radio" id="radio{{i}}" checked="checked">
-                      <label for="radio{{i}}" class="form-check-label dark-grey-text">{{taille.name}} stock: {{taille.stock}}</label>
+                      <input class="form-check-input" name="group100" type="radio" id="radio{{i}}"  [attr.disabled]="taille.stock === 0">
+                      <label for="radio{{i}}" class="form-check-label dark-grey-text">{{taille.name}}
+                        stock: {{taille.stock}}</label>
+                      <p style="color: red;" *ngIf="taille.stock == 0">Rupture de stock</p>
                     </div>
                   </div>
                 </div>
@@ -202,7 +203,8 @@
               </div>
               <!--Card-->
 
-            </div>s
+            </div>
+            s
 
           </div>
           <!--First slide-->
