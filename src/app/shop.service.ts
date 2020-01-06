@@ -71,4 +71,12 @@ export class ShopService {
       return  b.id - a.id;
     });
   }
+
+  getProductsBySearch(search: string) {
+    const products = this.getProducts();
+
+    return products.filter((el) => {
+      return el.title.indexOf(search) !== -1;
+    });
+  }
 }

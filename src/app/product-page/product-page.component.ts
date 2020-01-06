@@ -24,6 +24,7 @@ export class ProductPageComponent implements OnInit {
     this.tails = this.shopService.getTailsByProduct(id);
     const idCat = this.product.categoryId;
     this.similarProducts = this.shopService.getProductsByCategory(idCat);
+    console.log(this.similarProducts);
   }
 
 }

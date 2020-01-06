@@ -21,7 +21,7 @@
         <h4 class="font-weight-bold mt-4 dark-grey-text"><strong>Promotions</strong></h4>
 
         <!-- Grid row -->
-        <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="row" style="display: flex; justify-content: space-around; align-items: center;" [@changeBackground]="state">
 
           <!--Grid column-->
           <div class="col-lg-2 col-md-6 mb-4" *ngFor="let product of promoProducts|slice: 0 : 5">
@@ -42,7 +42,7 @@
                 <!--Category & Title-->
 
 
-                <span class="badge badge-danger mb-2">Promo</span>
+                <span class="badge badge-danger mb-2" [@promoAnim]="state">Promo</span>
                 <span class="badge badge-success mb-2" style="position: relative; top: -60px; left: -50px">-{{product.percentage}} %</span>
                 <h5 class="card-title mb-1"><strong><a [routerLink]="['/product', product.id]" class="dark-grey-text">{{product.title}}</a></strong></h5>
 
